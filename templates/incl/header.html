@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+    {% for menu in menus %}
+    {% if menu.path == selected %}
+        <li><a style="color: orangered; border-bottom: 4px solid; padding-bottom: 5px;" href="{% url menu.path %}">{{ menu.name }}</a></li>
+    {% else %}
+        <li><a style="color: black;" href="{% url menu.path %}">{{ menu.name }}</a></li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+</nav>

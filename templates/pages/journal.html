@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h1 class="display-4 border-1 border-bottom py-3">Журнал</h1>
+    {% for booking in bookings  %}
+        <div class="card-container my-0 py-0">
+            <div class="card-image">
+                <img src="{% static "images/person.png" %}" width=100 alt="person">
+            </div>
+            <div class="card-details">
+                <div class="card-details-name">
+                    {{ booking.person }}
+                </div>
+                <div class="card-details-place">
+                    <p style="font-size: 2em;">{{ booking.place }}</p>
+                </div>
+                <div class="card-details-date">
+                    <small>{{ booking.booked_date }}</small>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+    {% endfor %}
+{% endblock content %}

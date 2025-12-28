@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="display-4 border-1 border-bottom py-3">Бронь</h1>
+    <form action="" method="post">{% csrf_token %}
+
+        <p class="mt-5 fw-bold">Сотрудник</p>
+        <select class="form-select" aria-label="Пример выбора по умолчанию сотрудника" name='person' required>
+            <option selected >Выберите сотрудника</option>
+            {% for person in persons %}
+                <option value="{{ person.id }}">{{ person.person }}</option>
+            {% endfor %}
+        </select>
+
+        <p class="mt-5 fw-bold">Место для бронирования</p>
+        <select class="form-select" aria-label="Пример выбора по умолчанию места" name='place' required>
+            <option selected>Выберите место</option>
+            {% for place in places %}
+                <option value="{{ place.id }}">{{ place.place }}</option>
+            {% endfor %}
+        </select>
+
+        <hr>
+        <button type="submit" class="btn btn-primary mt-5">Забронировать</button>
+    </form>    
+{% endblock content %}
