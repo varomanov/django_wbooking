@@ -1,0 +1,82 @@
+html {
+    box-sizing: border-box;
+    font-size: .875rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(234, 231, 231);
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #fff;
+    padding: 20px;
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        width: 40%;
+        min-width: 40%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 601px) {
+    .container {
+        width: 100%;
+    }
+}
+
+footer {
+    margin-top: auto;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background-color: darkblue;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+nav {
+    background-color: rgb(254, 210, 192);
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+.card-container {
+    padding: 20px 0 20px 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.card-container img {
+    padding-right: 20px;
+    width: 80px;
+    text-shadow: 5px 5px 15px blue;
+}
+
+.card-details {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: self-start;
+    justify-content: center;
+}

@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ВАЖНО: Укажите конкретные домены вместо '*' для безопасности
 ALLOWED_HOSTS = [
@@ -134,11 +134,15 @@ USE_TZ = True
 
 # ВАЖНО: STATIC_ROOT ОБЯЗАТЕЛЕН при DEBUG = False
 # settings.py
+# Убедитесь, что эти настройки присутствуют:
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Или другой путь для сбора статики
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / 'static',  # Папка с вашими статическими файлами
 ]
+
+# Для сжатия статических файлов (опционально):
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field
