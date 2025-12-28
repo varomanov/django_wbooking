@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     'varomanov-django-wbooking-c723.twc1.net',  # ваш домен Timeweb Cloud
     'localhost',
     '127.0.0.1',
-    '[::1]',
+    '172.18.0.7',  # Docker internal IP
+    '0.0.0.0',     # Для доступа извне
 ]
 
 
@@ -132,11 +133,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 # ВАЖНО: STATIC_ROOT ОБЯЗАТЕЛЕН при DEBUG = False
-STATIC_URL = 'static/'
+# settings.py
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # ⬅️ КРИТИЧЕСКИ ВАЖНО! Папка для collectstatic
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field
