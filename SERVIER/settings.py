@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ВАЖНО: Укажите конкретные домены вместо '*' для безопасности
 ALLOWED_HOSTS = [
