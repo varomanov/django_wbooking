@@ -13,5 +13,5 @@ COPY . .
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 USER appuser
 
-# КРИТИЧНО ВАЖНО: используем правильное имя проекта - SERVIER
+# КОМАНДА ЗАПУСКА - используем SERVIER (ваше имя проекта)
 CMD ["gunicorn", "SERVIER.wsgi:application", "--bind", "0.0.0.0:8000"]
